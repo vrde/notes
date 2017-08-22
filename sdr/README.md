@@ -9,6 +9,7 @@ The first day was quite exciting. Once I was home, I decided to explore the freq
 
 I found a really strong signal jumping periodically between 466.0768MHz, 466.2310MHz, 465.9707MHz. Some internet pages say that it is an [unidentified digital signal](http://www.sigidwiki.com/wiki/Unidentified_466_MHz_digital_signal). Even though I later discovered that it is a [known frequency](https://en.wikipedia.org/wiki/POCSAG#National_implementations) for pagers, for a total n00b like me reading *unidentified signal* tickled my curiosity **a lot**.
 
+To have a full list of the available frequencies, check the [Licensed POCSAG frequencies](https://de.wikipedia.org/wiki/POCSAG#Frequenzen_in_Deutschland) page (thanks [Wikinaut](https://twitter.com/Wikinaut/status/899905985044766724) for the link).
 
 # Decoding the signal
 
