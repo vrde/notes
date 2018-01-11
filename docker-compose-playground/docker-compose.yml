@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    ncserver:
+        image: alpine
+        command: nc -l -p 8888
+    ncclient:
+        image: alpine
+        depends_on:
+            - ncserver
+        command: sh -c 'echo hello | nc ncserver 8888'
