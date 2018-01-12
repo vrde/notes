@@ -1,9 +1,9 @@
 # [WIP] Docker and Docker Compose playground
 Docker Compose is an amazing technology. I often rely on someone else's `docker-compose.yml`, and if something is not working I find myself hammering on some options (I don't fully understand) to try make it work, most of the time with no luck.
 
-What I'm sharing here are some experiments that helped me understanding better Docker Compose. I made this document public hoping other creatures will find it useful.
+What I'm sharing here are some experiments that helped me understanding better Docker and Docker Compose. I made this document public hoping other creatures will find it useful.
 
-I'm focusing on [Docker Compose version 3](https://docs.docker.com/compose/compose-file/) (unfortunately, they don't have a permanent URL for that specific version of the documentation), specifically on how to connect to containers from:
+I'm focusing on Docker 17.05 (Community Edition, don't get me started with the name) and [Docker Compose version 3](https://docs.docker.com/compose/compose-file/) (unfortunately, they don't have a permanent URL for that specific version of the documentation), specifically on how to connect to containers from:
 - the host
 - another container run with `docker`
 - another container in a `docker-compose.yml`
@@ -12,13 +12,13 @@ I'm skipping basic stuff like setting up your system with Docker and Docker Comp
 
 You'll need to run multiple terminals, my personal preference is to use `tmux` because I can split the current window in multiple panels. I assume basic knowledge of the terminal, and a Posix-like system.
 
-I almost forgot: as a generic humanoid carbon unit, I make mistakes. If you find something wrong please do a PR, if you don't understand something please open an issue.
+As a generic humanoid carbon unit, I make mistakes. If you find something wrong please do a PR, if you don't understand something please open an issue.
 
 # A simple server with `nc` (netcat)
-`nc` is a pretty neat command to make TCP and UDP connections and servers.
+`nc` is a pretty neat command to make TCP and UDP connections and servers. The following examples will use two `nc` processes, one for the server and one for the client.
 
 ## The basics
-The very first step is to make our complex client side architecture work in our box. We will spawn a `nc` server, listening to port `8888`, and a client, that will connect to the server to send a message. Doing this in your host is pretty simple. Again, everything is running on `localhost`, starting a server and connecting to it is as easy as it sounds. On a terminal, run the server:
+The very first step is to try out `nc` and create a simple client-server architecture in our machine (also called *host*). We will spawn a `nc` server, listening to port `8888`, and a client, that will connect to the server to send a message. Doing this in your host is pretty simple. Again, everything is running on `localhost`, starting a server and connecting to it is as easy as it sounds. On a terminal, run the server:
 ```
 nc -l -p 8888
 ```
@@ -27,12 +27,13 @@ On a different terminal, send a message to the server:
 ```
 echo hello | nc localhost 8888
 ```
-*Exit by hitting `ctrl+c`.*
 
 You should now see `hello` on the terminal of the server.
 
+*Exit by hitting `ctrl+c`.*
+
 ## Using Docker
-In this section we will mainly use the command `docker`.
+In this section we will use the command `docker`.
 
 ### Host to Docker
 What happens if we run the server in a Docker container, and we connect to it from the host? Let's *containerize* it first:
@@ -47,17 +48,15 @@ echo hello | nc localhost 8888
 
 As in the previous example, you should see `hello` in the containerized server.
 
-Why does this work? In this example, Docker is publishing the port `8888` on the host to the port `8888` of the container (the option is `-p8888:8888`). But this is boring. Let's spice up our example.
+Why does this work? In this example, Docker is publishing the port `8888` on the host to the port `8888` of the container (the option is `-p8888:8888`). Even if it works, it's kinda boring. Let's spice up our example.
 
-#### Playing with networks
-This is something I wish I understood before.
-
-We start the server as before, we name the container with `--name ncserver`, but we don't publish the port this time:
+#### Playing with networks (aka, something I wish I understood earlier)
+We start the server as before, and we name the container with `--name ncserver`. This time we don't publish the port:
 ```
 docker run --rm --name ncserver alpine nc -l -p 8888
 ```
 
-But how do we connect to it? Where is it running? Docker's networking behaviour is quite interesting. Before digging into details, let's find out our container IP address:
+How do we connect to it? Where is it running? Docker's networking behaviour is quite interesting. Before digging into details, let's find out our container IP address:
 
 ```
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ncserver
@@ -71,7 +70,7 @@ echo hello | nc 172.17.0.2 8888
 #### What happened here?
 If you don't specify a network when running a container, Docker attaches it to the default network. You can verify this with `docker inspect ncserver` in the `Networks` section of the output. The default network is called `bridge`, and your `ncserver` should be connected there.
 
-For more fun, let's see what the kernel IP with `route -n`:
+For even more fun, let's see what the kernel IP routing table looks like:
 ```
 $ route -n
 Kernel IP routing table
@@ -81,7 +80,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 ...
 ```
 
-Interestingly enough, the IP of our container `ncserver` is in the subnet `172.17.0.0`, so packages from and to `172.17.0.2` go through the (virtual) internface `docker0`.
+Interestingly enough, the IP of our container `ncserver` is in the subnet `172.17.0.0`, so packages *from* and *to* `172.17.0.2` go through the (virtual) interface `docker0`.
 
 If we query for the status of that interface with `ifconfig docker0`, we have something like that:
 
@@ -96,22 +95,26 @@ If you don't find it particularly interesting, wait to see how it works with Doc
 
 
 ### Docker to Docker
-In this section we run two containers and connect them. Now things are a bit more interesting. Start the server as before:
+In this section we run two containers and connect them, and things are starting to be interesting. Start the server as before:
 ```
 docker run --rm alpine nc -l -p 8888
 ```
 
-How do you connect the client to our server? In the "Host to Docker" example, we opened a connection from `localhost` to a specific host in a different network. The kernel took care of routing the request to the correct host through the interface `docker0`. If we want to connect a Docker container to another one, since they run in the same network we can just use IP addresses. The IP of the container `ncserver` should be the same as before, `172.17.0.2`. We can simply do:
+How do we connect client and server? In the "Host to Docker" example, we opened a connection from `localhost` to a specific host in a different network. The kernel took care of routing the request to the correct host through the interface `docker0`. In this case, the two docker containers run in the same network. The IP of the container `ncserver` should be the same as before, `172.17.0.2`. We can simply do:
 ```
 docker run --rm alpine sh -c 'echo hello | nc 172.17.0.2 8888'
 ```
 
-This should connect to the other container and send our mildly entertaining "hello" message. Note we had to wrap the command in `sh -c '...'` in order to execute the pipe command inside the container, and not in the current terminal.
+This should connect to the `ncserver` container and send our mildly entertaining "hello" message to it. Note we had to wrap the command in `sh -c '...'` in order to execute the pipe command inside the container, and not in the current terminal.
+
+IP addresses can change, so using them is not ideal, and hardcoding them in a script is even worse. Docker provides an [embedded DNS server](https://docs.docker.com/engine/userguide/networking/configure-dns/) for user-defined networks. We will see in a moment how this works together with Docker Compose.
 
 ## Using Docker Compose
 Where we explore how to do things with—you guessed right—Docker Compose!
 
 ### Host to Docker Compose
+*Note: this section [doesn't work](https://docs.docker.com/docker-for-mac/networking/#known-limitations-use-cases-and-workarounds) if you are using Docker for mac.*
+
 We start by creating a simple `docker-compose.yml` file that runs the `nc` server:
 ```
 version: '3'
@@ -124,10 +127,10 @@ services:
 
 To run the service, type:
 ```
-docker-compose run --rm ncserver
+docker-compose up ncserver
 ```
 
-OK, time to connect to our webscale™ `nc` server from our host. The difference from the previous scenario is that in this case Docker Compose creates an **ad hoc virtual network** for the **services** listed in `docker-compose.yml`. Using some of the commands I showed before, we can start understanding how this thing works. First, let's check the IP address of the newly launched `ncserver`. Note that the name of the container depends on the directory where the configuration file is:
+OK, time to connect to our webscale™ `nc` server. We will do it from our host. The difference from the previous scenario is that in this case Docker Compose creates an **ad hoc virtual network** for the **services** listed in `docker-compose.yml`. Using some of the commands I showed before, we can start understanding how this thing works. First, let's check the IP address of the newly launched `ncserver`. Note that the name of the container depends on the directory where the configuration file is:
 ```
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                  PORTS               NAMES
@@ -148,7 +151,7 @@ echo hello | nc 172.18.0.2 8888
 Yay, it works!
 
 #### What happened here?
-The network where the container is connected is `172.18.0.0`. Let's dig more, and check the routing tables of the kernel:
+The network where the container is connected is `172.18.0.0`. If you remember, in the Docker examples the newtork was `172.17.0.0`. What happened? Let's dig more, and check the routing tables of the kernel:
 ```
 $ route -n
 Kernel IP routing table
@@ -197,6 +200,8 @@ You can run everything with the simple command:
 ```
 docker-compose up
 ```
+
+# THIS IS NOT FINISHED
 
 # Further reading
 I suggest you to take 20 minutes and read [Docker container networking](https://docs.docker.com/engine/userguide/networking/).
