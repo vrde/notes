@@ -1,7 +1,5 @@
-# Docker and Docker Compose playground
-Docker Compose is an amazing technology. I often rely on someone else's `docker-compose.yml`, and if something is not working I find myself hammering on some options (I don't fully understand) to try make it work, most of the time with no luck.
-
-What I'm sharing here are some experiments that helped me understanding better Docker and Docker Compose. I made this document public hoping other creatures will find it useful.
+# Docker and Docker Compose networking playground
+I'm sharing some experiments that helped me understanding better Docker and Docker Compose from a **networking** level. I made this document public hoping other creatures will find it useful.
 
 I'm focusing on Docker 17.05 (Community Edition, don't get me started with the name) and [Docker Compose version 3](https://docs.docker.com/compose/compose-file/) (unfortunately, they don't have a permanent URL for that specific version of the documentation), specifically on how to connect to containers from:
 - the host
