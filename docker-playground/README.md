@@ -1,4 +1,4 @@
-# [WIP] Docker and Docker Compose playground
+# Docker and Docker Compose playground
 Docker Compose is an amazing technology. I often rely on someone else's `docker-compose.yml`, and if something is not working I find myself hammering on some options (I don't fully understand) to try make it work, most of the time with no luck.
 
 What I'm sharing here are some experiments that helped me understanding better Docker and Docker Compose. I made this document public hoping other creatures will find it useful.
@@ -134,12 +134,12 @@ OK, time to connect to our webscale™ `nc` server. We will do it from our host.
 ```
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                  PORTS               NAMES
-afd69fa6e2a8        alpine              "nc -l -p 8888"     2 second ago        Up 1 second                       dockercomposeplayground_ncserver_1
+afd69fa6e2a8        alpine              "nc -l -p 8888"     2 second ago        Up 1 second                       dockercompose_ncserver_1
 ```
 
-OK, so the name of my container is `dockercomposeplayground_ncserver_1`, short, simple, and easy to remember. The IP of the container is:
+OK, so the name of my container is `dockercompose_ncserver_1`, short, simple, and easy to remember. The IP of the container is:
 ```
-$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' dockercomposeplayground_ncserver_1
+$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' dockercompose_ncserver_1
 172.18.0.2
 ```
 
@@ -173,11 +173,12 @@ br-083ed51d3bc1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 This is reflected also in the list of networks managed by Docker:
 ```
 $ docker network ls
-NETWORK ID          NAME                              DRIVER              SCOPE
-9a834ebdf75c        bridge                            bridge              local
-083ed51d3bc1        dockercomposeplayground_default   bridge              local
-d70f3f0de048        host                              host                local
-dce8e03e2ab9        none                              null                local
+NETWORK ID          NAME                       DRIVER              SCOPE
+9a834ebdf75c        bridge                     bridge              local
+083ed51d3bc1        dockercompose_default      bridge              local
+d70f3f0de048        host                       host                local
+dce8e03e2ab9        none                       null                local
+
 ```
 
 ### Set up a proper Docker Compose
@@ -201,7 +202,50 @@ You can run everything with the simple command:
 docker-compose up
 ```
 
-# THIS IS NOT FINISHED
+If you see in the logs `ncserver_1  | hello`, congrats, everything went as expected! `docker-compose up` does a lot of things (it *builds, (re)creates, starts, and attaches to containers for a service*), take a minute to read the output of `docker-compose up -h`, it will really help you understand what this command does.
+
+#### The embedded DNS server
+As you might have noticed, we didn't use IP addresses this time, but hostnames. This is something we have for free by using user-defined networks, and Docker Compose (as we saw before) creates a new network for us. This allow us to refer to other containers by the name specified under `services`.
+
+Let's query the embedded DNS server. First, start `ncserver`:
+```
+docker-compose up ncserver
+```
+
+The server will hang waiting for connections. Now run:
+```
+docker-compose run --rm nclient sh
+```
+
+To query the DNS server I usually use `dig`. In *alpine* a similar command is `drill`. We need to update the package manager and install the software:
+```
+apk update
+apk add drill
+```
+
+Now are ready to query the DNS server:
+```
+/ # drill ncserver
+;; ->>HEADER<<- opcode: QUERY, rcode: NOERROR, id: 64349
+;; flags: qr rd ra ; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; QUESTION SECTION:
+;; ncserver.    IN      A
+
+;; ANSWER SECTION:
+ncserver.       600     IN      A       172.20.0.2
+
+;; AUTHORITY SECTION:
+
+;; ADDITIONAL SECTION:
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.11
+;; WHEN: Tue Jan 16 11:01:29 2018
+;; MSG SIZE  rcvd: 50
+```
+
+*Note: I didn't find a way to query the DNS server from the host, if you have an idea on how to do it please tell me.*
+
 
 # Further reading
 I suggest you to take 20 minutes and read [Docker container networking](https://docs.docker.com/engine/userguide/networking/).
