@@ -13,17 +13,34 @@ Keep in mind that zero emission differs from CO₂ neutral.
 
 [greenhost.net](https://greenhost.net/) is a Dutch provider powered by 100% Dutch wind energy.
 
+From their [sustainability page](https://greenhost.net/sustainable/):
+
+Green and sustainable web hosting, from small, simple websites to complex setups with multiple VPSs, is the foundation of Greenhost. We have been front runners in this field for over fifteen years, and we still strive towards maximal sustainability in every step of our production process. This goes just as much for the small choices, like which coffee or furniture to use and for the big contributions, like which hardware or energy supplier to select. This page provides more background information on policy and the choices made.
+
 ### greengeeks.com
 
 [greengeeks](https://www.greengeeks.com/) is a US (California) provider. They claim that a GreenGeeks account has a positive energy footprint on the environment as they replace, with wind power credits, 3 times the amount of energy your website will use.
+
+From their [platform page](https://www.greengeeks.com/platform):
+
+Our hosting platform has been designed with a maximum use, no waste of resources mindset. Every aspect of our hosting platform is built to be as energy efficient as possible.
+
+In addition to this, for every amperage we pull from the grid, we invest 3 times that in the form of renewable energy via Bonneville Environmental Foundation.
+
+Your website will be "carbon-reducing" when hosted on our platform. You can feel good that you're helping make a difference by hosting on a platform that is eco-friendly.
 
 ## E-mail
 
 ### mailbox.org
 
-[mailbox.org](https://mailbox.org/en/) is a company based Berlin, Germany, that runs on 100% green energy. They claim that their servers are energy-efficient and powered by eco-friendly energy. They use renewable energy in their offices, too, provided by the company "Lichtblick". On top of that "whenever we need to go visit one of the data centers we use public transport or car-sharing offers by Stadtmobil. Should a flight be necessary, we compensate the extra emissions caused with a contribution to Atmosfair."
+[mailbox.org](https://mailbox.org/en/) is a company based Berlin, Germany, that runs on 100% green energy. They claim that their servers are energy-efficient and powered by eco-friendly energy. I'm a mailbox user and I'm quite satisfied.
 
-I'm a mailbox user and I'm quite satisfied.
+From their [sustainability page](https://mailbox.org/en/company):
+
+Our servers are energy-efficient and powered by eco-friendly energy that provided through the data centers. We use renewable energy in our offices, too, provided by the company "Lichtblick".
+
+Whenever we need to go visit one of the data centers we use public transport or car-sharing offers by Stadtmobil. Should a flight be necessary, we compensate the extra emissions caused with a contribution to atmosfair.
+
 
 ### posteo.de
 
