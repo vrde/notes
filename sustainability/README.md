@@ -15,7 +15,7 @@ Keep in mind that zero emission differs from CO₂ neutral.
 
 From their [sustainability page](https://greenhost.net/sustainable/):
 
-Green and sustainable web hosting, from small, simple websites to complex setups with multiple VPSs, is the foundation of Greenhost. We have been front runners in this field for over fifteen years, and we still strive towards maximal sustainability in every step of our production process. This goes just as much for the small choices, like which coffee or furniture to use and for the big contributions, like which hardware or energy supplier to select. This page provides more background information on policy and the choices made.
+> Green and sustainable web hosting, from small, simple websites to complex setups with multiple VPSs, is the foundation of Greenhost. We have been front runners in this field for over fifteen years, and we still strive towards maximal sustainability in every step of our production process. This goes just as much for the small choices, like which coffee or furniture to use and for the big contributions, like which hardware or energy supplier to select. This page provides more background information on policy and the choices made.
 
 ### greengeeks.com
 
@@ -23,11 +23,9 @@ Green and sustainable web hosting, from small, simple websites to complex setups
 
 From their [platform page](https://www.greengeeks.com/platform):
 
-Our hosting platform has been designed with a maximum use, no waste of resources mindset. Every aspect of our hosting platform is built to be as energy efficient as possible.
-
-In addition to this, for every amperage we pull from the grid, we invest 3 times that in the form of renewable energy via Bonneville Environmental Foundation.
-
-Your website will be "carbon-reducing" when hosted on our platform. You can feel good that you're helping make a difference by hosting on a platform that is eco-friendly.
+> Our hosting platform has been designed with a maximum use, no waste of resources mindset. Every aspect of our hosting platform is built to be as energy efficient as possible.
+> In addition to this, for every amperage we pull from the grid, we invest 3 times that in the form of renewable energy via Bonneville Environmental Foundation.
+> Your website will be "carbon-reducing" when hosted on our platform. You can feel good that you're helping make a difference by hosting on a platform that is eco-friendly.
 
 ## E-mail
 
@@ -37,9 +35,8 @@ Your website will be "carbon-reducing" when hosted on our platform. You can feel
 
 From their [sustainability page](https://mailbox.org/en/company):
 
-Our servers are energy-efficient and powered by eco-friendly energy that provided through the data centers. We use renewable energy in our offices, too, provided by the company "Lichtblick".
-
-Whenever we need to go visit one of the data centers we use public transport or car-sharing offers by Stadtmobil. Should a flight be necessary, we compensate the extra emissions caused with a contribution to atmosfair.
+> Our servers are energy-efficient and powered by eco-friendly energy that provided through the data centers. We use renewable energy in our offices, too, provided by the company "Lichtblick".
+> Whenever we need to go visit one of the data centers we use public transport or car-sharing offers by Stadtmobil. Should a flight be necessary, we compensate the extra emissions caused with a contribution to atmosfair.
 
 
 ### posteo.de
@@ -48,8 +45,7 @@ Whenever we need to go visit one of the data centers we use public transport or 
 
 From their [sustainability page](https://posteo.de/en/site/sustainability):
 
-Our servers and offices run 100% on green energy from Greenpeace Energy, which comes from hydro stations and wind turbines in Austria and Germany. Greenpeace Energy makes no compromises in terms of its supply concept and development of new facilities:
-
-- No greenwashing: Greenpeace Energy does not label power from coal or nuclear sources as green energy and declines to deal in certificate trading such as RECS.
-- Transparency: Greenpeace Energy openly displays its supply sources for its customers to see.
-- Promoting new facilities: Within five years at the latest, new customers are supplied with 100% power from facilities that are less than five years old.
+> Our servers and offices run 100% on green energy from Greenpeace Energy, which comes from hydro stations and wind turbines in Austria and Germany. Greenpeace Energy makes no compromises in terms of its supply concept and development of new facilities:
+> - No greenwashing: Greenpeace Energy does not label power from coal or nuclear sources as green energy and declines to deal in certificate trading such as RECS.
+> - Transparency: Greenpeace Energy openly displays its supply sources for its customers to see.
+> - Promoting new facilities: Within five years at the latest, new customers are supplied with 100% power from facilities that are less than five years old.
