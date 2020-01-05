@@ -14,4 +14,4 @@ app.get('/', async (req, res, next) => {
         res.end(`local height: ${localHeight}, main net height: ${mainHeight}, percentage: ${percentage}`)
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`App listening on port ${port}!`))
