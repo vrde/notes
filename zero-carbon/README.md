@@ -25,6 +25,37 @@ From their [sustainability page](https://greenhost.net/sustainable/):
 
 > Green and sustainable web hosting, from small, simple websites to complex setups with multiple VPSs, is the foundation of Greenhost. We have been front runners in this field for over fifteen years, and we still strive towards maximal sustainability in every step of our production process. This goes just as much for the small choices, like which coffee or furniture to use and for the big contributions, like which hardware or energy supplier to select. This page provides more background information on policy and the choices made.
 
+### FlokiNET
+
+[FlokiNET](https://flokinet.is/) is an Icelandic provider located also in Romania and Finland. They provide a safe harbor for freedom of speech, free press and whistleblower projects.
+
+From their [ecological responsibility page](https://flokinet.is/ecoresponsability.php):
+
+> Iceland´s geographic location provides plenty of both water and wind used to generate energy, from either hydroelectric dams (for further information, see the website for Landsvirkjun, Iceland´s National Energy Company, www.landsvirkjun.com) or, in super-heated form as steam in geothermal power plants, such as the one pictured above (see Reykjavik Energy website, https://www.or.is/English). The second one, wind, provides a steady supply of natural cooling and helps to keep temperatures down.
+
+> This temperate climate is the ideal for data centers. The energy is clean, and renewable. Pollution from energy production is non-existent and the carbon footprint is absolutely zero.
+Natural free cooling, amply provided by Kári (an Icelandic nick name for the wind), is used to control temperatures inside the data center, and helps to keep costs down. The average temperature at the data center location is 1.8°C in January and 10°C in July.
+
+### 1984
+
+[1984](https://www.1984.is/) is an Icelandic provider established in 2006. They care about civil rights and Free Software.
+
+From their [about page](https://www.1984.is/about/):
+
+> Green, sustainable geothermal and hydro power energy. 1984 commits to environmentally responsible business practices by utilizing only electricity from renewable energy sources and placing emphasis on reaching the highest possible energy utilization efficiency levels. This is achievable in Iceland, because all electricity production meets the aforementioned criteria and the cold climate makes PUE (Power Usage Effectiveness) very high, meaning that for each watt used to run servers, storage and network equipment, proportionally very little is used for cooling, lighting and other overhead.
+
+
+### Hetzner
+
+[hetzner.com](https://www.hetzner.com/) is a German hosting provider and data center operator, established in 1997. It has data centers in Germany and Finland, and they claim to have 0 CO₂ emissions by running on 100% green electricity.
+
+From their [environmental protection page](https://www.hetzner.com/unternehmen/umweltschutz/):
+
+> Hetzner Online is taking responsibility and protecting the environment.
+>
+> Taking responsibility for the environment means there is an increasing need to obtain energy from renewable sources. Hetzner Online uses energy from renewable sources to power the servers in its data centers.
+
+
 ### greengeeks.com
 
 [greengeeks](https://www.greengeeks.com/) is a US (California) provider. They claim that a GreenGeeks account has a positive energy footprint on the environment as they replace, with wind power credits, 3 times the amount of energy your website will use.
