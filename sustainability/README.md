@@ -1,13 +1,21 @@
-# Zero emission infrastructure
+# Zero carbon infrastructure
 
+This list is a collection of providers (VPS, hosting, email, etc.) that run their business on renewable energy and have a commitment towards the environment.
 
-Keep in mind that zero emission differs from CO₂ neutral.
+This list focuses on **zero carbon** providers, not on carbon neutral ones.
 
 ## VPS and hosting
 
 ### datacenterlight.ch
 
 [datacenterlight.ch](https://datacenterlight.ch/) is located in Swissland. They operate with 99.9% hydropower from the Alps and a 0.01% from solar energy. They claim also to reuse existing factory halls instead of building everything new. They have been mentioned by [Julian Oliver](http://twitter.com/julian0liver) in his talk [Server Infrastructure for Global Rebellion](https://media.ccc.de/v/36c3-11008-server_infrastructure_for_global_rebellion).
+
+From their [renewable energy page](https://datacenterlight.ch/en-us/cms/hydropower/):
+
+> Not every data center has an in-house hydropower plant, but we do. Data Center Light runs with 99.9%\* hydropower. Few meters away from where our servers are running, the hydropower plant is generating electricity in the basement. We assure you that our electricity is made of 100% renewable energy.
+>
+> \*0.1 % of electricity comes from solar power.
+
 
 ### greenhost.net
 
