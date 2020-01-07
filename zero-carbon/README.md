@@ -8,7 +8,7 @@ This list focuses on **zero carbon** providers, not on carbon neutral ones.
 
 ### datacenterlight.ch
 
-[datacenterlight.ch](https://datacenterlight.ch/) is located in Swissland. They operate with 99.9% hydropower from the Alps and a 0.01% from solar energy. They claim also to reuse existing factory halls instead of building everything new. They have been mentioned by [Julian Oliver](http://twitter.com/julian0liver) in his talk [Server Infrastructure for Global Rebellion](https://media.ccc.de/v/36c3-11008-server_infrastructure_for_global_rebellion).
+[datacenterlight.ch](https://datacenterlight.ch/) is located in Switzerland. They operate with 99.9% hydropower from the Alps and a 0.01% from solar energy. They claim also to reuse existing factory halls instead of building everything new. They have been mentioned by [Julian Oliver](http://twitter.com/julian0liver) in his talk [Server Infrastructure for Global Rebellion](https://media.ccc.de/v/36c3-11008-server_infrastructure_for_global_rebellion).
 
 From their [renewable energy page](https://datacenterlight.ch/en-us/cms/hydropower/):
 
