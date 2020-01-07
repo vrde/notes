@@ -55,6 +55,16 @@ From their [environmental protection page](https://www.hetzner.com/unternehmen/u
 >
 > Taking responsibility for the environment means there is an increasing need to obtain energy from renewable sources. Hetzner Online uses energy from renewable sources to power the servers in its data centers.
 
+### Bahnhof
+
+[bahnhof.net](https://www.bahnhof.net/) is a Swedish provider focusing on extreme security and low cost green energy.
+
+They started an intiative called [Triple Green](http://triplegreen.net/) that states:
+
+> Triple Green is an environmental certification for data centers which fulfill a tough set of requirements on renewable energy and efficiency. The initiative was started by Bahnhof AB.
+> 1. The data center must be powered by renewable energy only.
+> 2. Heat from the servers is collected and used for heating of nearby households.
+> 3. The household heating replaces other energy sources, and everyone profits in the process.
 
 ### greengeeks.com
 
