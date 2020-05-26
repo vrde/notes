@@ -25,6 +25,17 @@ From their [sustainability page](https://greenhost.net/sustainable/):
 
 > Green and sustainable web hosting, from small, simple websites to complex setups with multiple VPSs, is the foundation of Greenhost. We have been front runners in this field for over fifteen years, and we still strive towards maximal sustainability in every step of our production process. This goes just as much for the small choices, like which coffee or furniture to use and for the big contributions, like which hardware or energy supplier to select. This page provides more background information on policy and the choices made.
 
+### runbox
+
+[runbox](https://runbox.com/) is an independent private Norwegian company headquartered in Oslo, Norway. Runbox is double carbon negative. They care about sustainability, security, privacy. The company is owned by employees and board members (77.54% in 2018) and close associates.
+
+From their [sustainability page](https://runbox.com/why-runbox/sustainable-services/):
+
+> Runbox works continuously to decrease CO2 emissions from our operations and act in an environmentally responsible manner.
+> Our environmental policy lays out our commitments to reducing, reusing, and recycling our resources. In our policy we also pledge to doubly offset any CO2 emissions that do result from our operations despite our email service being entirely hydropowered. 
+
+Thanks [Carl Emil Carlsen for the recommendation](https://twitter.com/cecarlsen/status/1265256188998008834).
+
 ### FlokiNET
 
 [FlokiNET](https://flokinet.is/) is an Icelandic provider located also in Romania and Finland. They provide a safe harbor for freedom of speech, free press and whistleblower projects.
@@ -43,7 +54,6 @@ Natural free cooling, amply provided by Kári (an Icelandic nick name for the wi
 From their [about page](https://www.1984.is/about/):
 
 > Green, sustainable geothermal and hydro power energy. 1984 commits to environmentally responsible business practices by utilizing only electricity from renewable energy sources and placing emphasis on reaching the highest possible energy utilization efficiency levels. This is achievable in Iceland, because all electricity production meets the aforementioned criteria and the cold climate makes PUE (Power Usage Effectiveness) very high, meaning that for each watt used to run servers, storage and network equipment, proportionally very little is used for cooling, lighting and other overhead.
-
 
 ### Hetzner
 
