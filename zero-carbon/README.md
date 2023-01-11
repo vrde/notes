@@ -79,16 +79,6 @@ From their [about page](https://www.1984.is/about/):
 
 > Green, sustainable geothermal and hydro power energy. 1984 commits to environmentally responsible business practices by utilizing only electricity from renewable energy sources and placing emphasis on reaching the highest possible energy utilization efficiency levels. This is achievable in Iceland, because all electricity production meets the aforementioned criteria and the cold climate makes PUE (Power Usage Effectiveness) very high, meaning that for each watt used to run servers, storage and network equipment, proportionally very little is used for cooling, lighting and other overhead.
 
-### Hetzner
-
-[hetzner.com](https://www.hetzner.com/) is a German hosting provider and data center operator, established in 1997. It has data centers in Germany and Finland, and they claim to have 0 CO₂ emissions by running on 100% green electricity.
-
-From their [environmental protection page](https://www.hetzner.com/unternehmen/umweltschutz/):
-
-> Hetzner Online is taking responsibility and protecting the environment.
->
-> Taking responsibility for the environment means there is an increasing need to obtain energy from renewable sources. Hetzner Online uses energy from renewable sources to power the servers in its data centers.
-
 ### Bahnhof
 
 [bahnhof.net](https://www.bahnhof.net/) is a Swedish provider focusing on extreme security and low cost green energy.
@@ -109,6 +99,21 @@ From their [platform page](https://www.greengeeks.com/platform):
 > Our hosting platform has been designed with a maximum use, no waste of resources mindset. Every aspect of our hosting platform is built to be as energy efficient as possible.
 > In addition to this, for every amperage we pull from the grid, we invest 3 times that in the form of renewable energy via Bonneville Environmental Foundation.
 > Your website will be "carbon-reducing" when hosted on our platform. You can feel good that you're helping make a difference by hosting on a platform that is eco-friendly.
+
+### Hetzner
+
+WARNING: Hetzner has a very stupid policy about blockchain, and while I agree PoW mining is bad, I don't see any problem with the rest.
+
+> The operation of applications for mining cryptocurrencies remains prohibited. These include, but are not limited to, mining, farming and plotting of cryptocurrencies. We are entitled to lock the Customer’s access to their Hetzner services or account in the event of non-compliance.
+
+[hetzner.com](https://www.hetzner.com/) is a German hosting provider and data center operator, established in 1997. It has data centers in Germany and Finland, and they claim to have 0 CO₂ emissions by running on 100% green electricity.
+
+From their [environmental protection page](https://www.hetzner.com/unternehmen/umweltschutz/):
+
+> Hetzner Online is taking responsibility and protecting the environment.
+>
+> Taking responsibility for the environment means there is an increasing need to obtain energy from renewable sources. Hetzner Online uses energy from renewable sources to power the servers in its data centers.
+
 
 ## E-mail
 
